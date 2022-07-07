@@ -1,14 +1,24 @@
+# This project aim to deploy a light spring boot application on Kubernetes using Helm charts
+
+**prerequisites :**
+
+- A dockerhub account
+- Docker installed on your machine for linux, Docker Desktop for Windows users
+- Minikuke installed for Linux, or Docker Desktop with windows to run a Kubernetes cluster
+- Kubectl installed ( comes with no installation with Docker Desktop )
+- Helm installed
+
 
 ### youtube video for Helm charts 
 [Helm Chart Demo - How to create your first Helm Chart? - Part 6](https://www.youtube.com/watch?v=2dqQcou_MCU)
 
-### to build image : cd root/of/project ( here root is customer-service )
+### to build image : cd root/of/project ( here root is helm03 )
 `docker build -t skcgi/alpine-customer:1.0 -f src/main/resources/Dockerfile . `
 
-### push images to your repository
+### push images to your repository ( you must create one on dockerhub for example )
 `docker push skcgi/alpine-customer:1.0`
 
-### access to H2 database console
+### access to H2 database console when running locally
 http://localhost:8080/h2-console    with url=, user, password => see application.properties
 
 ### create charts for helm
@@ -51,10 +61,10 @@ where C:\MINIKUBE\ is the directory where minikube is installed
 
 **result example :**
 
-Exception in thread "main" java.lang.UnsupportedClassVersionError: com/sks/ToDeployInK8sApplication has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only rec
-ognizes class file versions up to 52.0
-at java.lang.ClassLoader.defineClass1(Native Method)
-at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+*Exception in thread "main" java.lang.UnsupportedClassVersionError: com/sks/ToDeployInK8sApplication has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only rec *
+* ognizes class file versions up to 52.0 *
+* at java.lang.ClassLoader.defineClass1(Native Method) *
+* at java.lang.ClassLoader.defineClass(ClassLoader.java:763) *
 
 ### forwarding port from Kubernetes to locahost : 
 NOTES:
