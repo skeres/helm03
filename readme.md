@@ -44,7 +44,7 @@ where C:\MINIKUBE\ is the directory where minikube is installed
 ### deploy application. 
 `helm install springboot-app --generate-name`
 
-### check result : shoud display "status deployed"
+### check result : should display "status deployed"
 `helm list --all`
 `kubectl get all`
 
@@ -61,10 +61,10 @@ where C:\MINIKUBE\ is the directory where minikube is installed
 
 **result example :**
 
-*Exception in thread "main" java.lang.UnsupportedClassVersionError: com/sks/ToDeployInK8sApplication has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only rec *
-* ognizes class file versions up to 52.0 *
-* at java.lang.ClassLoader.defineClass1(Native Method) *
-* at java.lang.ClassLoader.defineClass(ClassLoader.java:763) *
+*Exception in thread "main" java.lang.UnsupportedClassVersionError: com/sks/ToDeployInK8sApplication has been compiled by a more recent version of the Java Runtime (class file version 55.0), this version of the Java Runtime only rec*
+*ognizes class file versions up to 52.0*
+*at java.lang.ClassLoader.defineClass1(Native Method)*
+*at java.lang.ClassLoader.defineClass(ClassLoader.java:763)*
 
 ### forwarding port from Kubernetes to locahost : 
 NOTES:
@@ -76,6 +76,13 @@ NOTES:
 
 3. echo "Visit http://127.0.0.1:8080 to use your application"
    
-**result : **
+**result on http://127.0.0.1:8080:**
 
 *Greetings from Spring Boot ! writing from customer controller*
+
+### uninstall application and stop minikube
+`helm list`
+`helm delete <generate-name>`
+`minikube stop`
+
+Enjoy !! :sunglasses: :tropical_drink: :tropical_drink:
